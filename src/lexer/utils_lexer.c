@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:31:10 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/14 12:32:40 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:33:55 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,12 @@ int	only_metachars(char *str)
 		i++;
 	}
 	return (1);
+}
+
+bool	classify_as_meta(const char *str)
+{
+	if (!str)
+		return (false);
+	return (!strcmp(str, "<") || !strcmp(str, "<<") || !strcmp(str, ">")
+		|| !strcmp(str, ">>") || !strcmp(str, "|"));
 }

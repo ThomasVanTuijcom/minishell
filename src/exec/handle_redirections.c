@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:17:50 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 16:20:34 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:41:23 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void	open_heredoc(t_data *data, t_p_node *node, bool *input)
 	*input = true;
 }
 
-void	handle_input_redirection(t_data *data, t_p_node *node,
-		t_p_node *curr, bool *input)
+void	handle_input_redirection(t_data *data, t_p_node *node, t_p_node *curr,
+		bool *input)
 {
 	if (curr->token_type == INFILE)
 		open_infile(node, curr, input);

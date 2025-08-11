@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:57:14 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/24 16:46:25 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:28:14 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 int	is_heredoc_valid(t_p_node *node)
 {
-	t_p_node	*curr;
+	t_p_node	*delim;
 
-	curr = node;
-	while (curr)
+	if (!node || !node->next)
+		return (0);
+	delim = node->next;
+	if (!delim->content || classify_as_meta(delim->content))
 	{
-		if (curr->token_type == OUTFILE || curr->token_type == APPEND_OF)
-		{
-			node->next->token_type = INVALID_HEREDOC;
-			return (0);
-		}
-		curr = curr->prev;
+		delim->token_type = INVALID_HEREDOC;
+		return (0);
 	}
 	return (1);
 }

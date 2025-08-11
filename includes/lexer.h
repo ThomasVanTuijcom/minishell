@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:29:16 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/24 17:14:14 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:34:09 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int						contains_metachar(char *content);
 int						only_metachars(char *str);
 int						is_metachar_type(int type);
 int						is_invalid_followup_token(char *content);
+bool					classify_as_meta(const char *str);
 
 #endif
