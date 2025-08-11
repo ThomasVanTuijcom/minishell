@@ -6,7 +6,7 @@
 #    By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 11:08:43 by tvan-tui          #+#    #+#              #
-#    Updated: 2025/08/11 16:18:32 by tvan-tui         ###   ########.fr        #
+#    Updated: 2025/08/11 18:59:16 by tvan-tui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRCS = \
 	$(SRCS_DIR)/exec/execute_minishell.c \
 	$(SRCS_DIR)/exec/execute_node.c \
 	$(SRCS_DIR)/exec/expand_heredoc_lines.c \
+	$(SRCS_DIR)/exec/fill_heredoc.c \
 	$(SRCS_DIR)/exec/handle_heredoc_variables.c \
 	$(SRCS_DIR)/exec/handle_redirections.c \
 	$(SRCS_DIR)/exec/heredoc.c \
