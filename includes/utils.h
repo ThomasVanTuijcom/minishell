@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:04:00 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 21:27:52 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:43:24 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char				**ft_split_charset(char **split, char *str, char *charset);
 int					ft_strcmp(const char *s1, const char *s2);
 void				try_free(char *s);
 t_p_node			*skip_faulty_nodes(t_p_node *curr);
+bool				is_minishell(char *path);
 
 /*					UTILS_CHAR_CHECK.C					*/
 bool				is_space(char c);

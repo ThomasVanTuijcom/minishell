@@ -18,4 +18,4 @@ cat << e << t | cat << ty
 Des fichiers qui ne sont pas fermé
 Signals dans heredoc
 
-valgrind --show-leak-kinds=all --leak-check=full --track-origins=yes --trace-children=yes --track-fds=yes -s bash
+valgrind --show-leak-kinds=all --leak-check=full --track-origins=yes --trace-children=yes --track-fds=yes --suppressions=readline.supp -s ./minishell

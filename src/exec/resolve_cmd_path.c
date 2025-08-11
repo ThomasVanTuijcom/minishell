@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 18:04:40 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/06 13:58:52 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:48:27 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	resolve_command_path(char **cmd_path_candidates, t_p_node *node)
 				print_error(MS_BASH, NULL, node->content_exp_wq, ERR_IS_DIR);
 				g_exit_code = 126;
 			}
-			else
+			else if (!is_minishell(node->content_exp_wq))
 			{
 				print_error(MS_BASH, NULL, node->content_exp_wq, ERR_CMD);
 				g_exit_code = 127;

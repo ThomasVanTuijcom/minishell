@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:38:32 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 21:00:18 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:42:03 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void	setup_signal_handlers(void);
 void	modify_signal_handlers(void);
 void	heredoc_signal_handlers(void);
 void	disable_sigpipe_handler(void);
+void	disable_signal_handling(void);
 
 #endif

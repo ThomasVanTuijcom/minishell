@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:15:46 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/24 17:36:41 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:38:55 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	parse_single_quote_content(char **str, t_p_node *node)
 {
 	add_char_to_content_exp(str, node);
-	while (**str != '\'')
+	while (**str && **str != '\'')
 		add_char_to_content_exp(str, node);
 	add_char_to_content_exp(str, node);
 }
@@ -28,7 +28,7 @@ void	parse_double_quote_content(char **str, t_p_node *node,
 	int		can_expand_dollar;
 
 	add_char_to_content_exp(str, node);
-	while (**str != '\"' && **str != '\0')
+	while (**str && **str != '\"' && **str != '\0')
 	{
 		current_char = **str;
 		next_char = *(*str + 1);

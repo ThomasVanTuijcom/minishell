@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:25:08 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 21:29:12 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:43:04 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_p_node	*skip_faulty_nodes(t_p_node *curr)
 		{
 			if (curr->content[runner] == '$' && curr->content[runner + 1]
 				&& curr->content[runner + 1] != '\'' && curr->content[runner
-					+ 1] != '"')
+				+ 1] != '"')
 				contain_var = 1;
 		}
 		if (contain_var && !curr->content_exp_wq[0])
@@ -50,4 +50,19 @@ t_p_node	*skip_faulty_nodes(t_p_node *curr)
 			return (curr);
 	}
 	return (curr);
+}
+
+bool	is_minishell(char *path)
+{
+	size_t	i;
+
+	if (!ft_strcmp(path, "./minishell"))
+		return (true);
+	i = ft_strlen(path);
+	if (i < 11)
+		return (false);
+	i -= 10;
+	if (!ft_strcmp(&path[i], "/minishell"))
+		return (true);
+	return (false);
 }

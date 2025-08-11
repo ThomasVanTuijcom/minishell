@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 11:38:11 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 19:34:24 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:47:19 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,10 @@ void						setup_io_redirections(t_data *data, t_p_node *node,
 int							execute_cmd(t_data *data, t_p_list *list);
 void						cleanup_redundant_outfiles(t_p_list *list);
 int							reset_io(int exec_data[5], t_p_list *list, int n);
+
+/*					EXECUTE_MINISHELL.C				*/
+void						execute_minishell(t_data *data, char *path,
+								char **cmds, char **envp);
 
 /*					EXECUTE_NODE.C				*/
 int							dup_close(int exec_data[5]);

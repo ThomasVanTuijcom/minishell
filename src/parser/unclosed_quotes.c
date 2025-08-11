@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:18:30 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/14 12:44:10 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:37:42 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	get_unclosed_quote_type(char *str, bool unclosed_f[2])
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '\'')
+		if (str[i] && str[i] == '\'')
 		{
 			if (!unclosed_f[0])
 				unclosed_f[0] = true;
 			else
 				unclosed_f[0] = false;
 		}
-		if (str[i] == '"')
+		if (str[i] && str[i] == '"')
 		{
 			if (!unclosed_f[1])
 				unclosed_f[1] = true;

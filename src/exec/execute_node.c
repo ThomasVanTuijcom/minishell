@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:27:45 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 21:05:20 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:44:49 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ int	fork_exec(int exec_data[5], t_p_node *node, t_data *data)
 
 void	execute_node(int exec_data[5], t_p_node *node, t_data *data)
 {
-	if (is_builtin_command(node) == 0 || is_builtin_command(node) == 2
+	if (exec_data[EXEC_TOTAL_CMDS] == 1 && (is_minishell(node->content_exp_wq)
+			|| !ft_strcmp(node->content_exp_wq, "bash")))
+		execute_minishell(data, node->content_exp_wq, node->cmds, data->envp);
+	else if (is_builtin_command(node) == 0 || is_builtin_command(node) == 2
 		|| (is_builtin_command(node) == 1 && exec_data[EXEC_TOTAL_CMDS] > 1))
 		fork_exec(exec_data, node, data);
 	else
