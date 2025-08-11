@@ -1,6 +1,6 @@
 # A fixer
 
-echo "H'"o'""""
+echo "H'"o'"""" (fix normalement)
 Export var=
 Export var+=lol
 Echo > blablabla | echo test >> out >> file
