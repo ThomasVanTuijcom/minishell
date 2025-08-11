@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 11:38:11 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 12:47:19 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:20:54 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,14 +111,11 @@ int							setup_cmd_redirections(t_data *data,
 
 /*					SETUP_IO_REDIRECTIONS.C				*/
 int							count_hdocs(char **hdocs);
-int							get_input_type(t_p_node *node);
-int							get_output_type(t_p_node *node);
 void						setup_io_redirections(t_data *data, t_p_node *node,
 								char **fds);
 
 /*					EXECUTE_CMD.C				*/
 int							execute_cmd(t_data *data, t_p_list *list);
-void						cleanup_redundant_outfiles(t_p_list *list);
 int							reset_io(int exec_data[5], t_p_list *list, int n);
 
 /*					EXECUTE_MINISHELL.C				*/
@@ -157,5 +154,12 @@ int							setup_mid_command(int exec_data[5], t_p_list *list,
 int							close_exec(t_p_node *node, t_p_list *list,
 								int exec_data[5]);
 int							close_exec_p(t_p_list *list, int exec_data[5]);
+
+/*					HANDLE_REDIRECTIONS.C				*/
+t_p_node					*get_first_node_in_pipeline(t_p_node *node);
+void						handle_input_redirection(t_data *data,
+								t_p_node *node, t_p_node *curr, bool *input);
+void						handle_output_redirection(t_p_node *node,
+								t_p_node *curr, bool *output);
 
 #endif

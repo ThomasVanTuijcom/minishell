@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 15:46:28 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 13:08:59 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:35:56 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ void	append_to_p_node(t_p_node *node, t_env_node *to_mod, int i, char *new)
 		return ;
 	tmp = NULL;
 	new = ft_strjoin_and_replace(new, "=");
-	if (new &&to_mod)
+	if (new && to_mod)
 		new = ft_strjoin_and_replace(new, to_mod->content);
 	if (new)
 		tmp = ft_strdup(&node->content_exp_wq[i + 2]);
-	if (new &&tmp)
+	if (new && tmp)
 		new = ft_strjoin_and_replace(new, tmp);
 	if (tmp)
 		free(tmp);

@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:23:53 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 18:15:42 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:07:28 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	execute_cmd(t_data *data, t_p_list *list)
 	exec_data[EXEC_STDIN_COPY] = dup(STDIN_FILENO);
 	exec_data[EXEC_STDOUT_COPY] = dup(STDOUT_FILENO);
 	modify_signal_handlers();
-	cleanup_redundant_outfiles(data->parser);
 	while (curr)
 	{
 		if (curr->token_type == CMD || !curr->index)

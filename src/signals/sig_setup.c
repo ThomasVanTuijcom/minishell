@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:52:31 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 12:41:51 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:21:43 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	disable_sigpipe_handler(void)
 	signal(SIGPIPE, SIG_DFL);
 }
 
-void    disable_signal_handling(void)
+void	disable_signal_handling(void)
 {
-    signal(SIGINT, SIG_IGN);
-    signal(SIGPIPE, SIG_DFL);
-    signal(SIGQUIT, SIG_IGN);
+	signal(SIGINT, SIG_IGN);
+	signal(SIGPIPE, SIG_DFL);
+	signal(SIGQUIT, SIG_IGN);
 }

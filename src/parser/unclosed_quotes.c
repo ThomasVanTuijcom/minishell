@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:18:30 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 13:06:13 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:22:14 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	get_unclosed_quote_type(char *str)
 
 int	check_for_unclosed_quotes(char *str)
 {
-	int flag;
+	int	flag;
 
 	flag = get_unclosed_quote_type(str);
 	if (flag > 0)

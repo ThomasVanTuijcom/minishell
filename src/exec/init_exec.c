@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 11:30:40 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 21:07:11 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 14:40:53 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	executor(t_data *data)
 	pathfinder(data);
 	create_files(data->parser);
 	setup_cmd_redirections(data, data->parser);
+	//print_p_list(data->parser);
 	if (data->parser->head->content_exp_wq[0])
 		execute_cmd(data, data->parser);
 	else if (ft_strlen(data->parser->head->content_exp)
