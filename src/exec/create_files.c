@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:13:02 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/07/24 17:27:34 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 18:32:12 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	verify_input_file(char *filename)
 	if (access(filename, F_OK) != 0)
 	{
 		print_error(MS_BASH, NULL, filename, ERR_NO_FOD);
+		g_exit_code = 1;
 		return (0);
 	}
 	return (1);
@@ -58,5 +59,5 @@ int	create_files(t_p_list *list)
 		}
 		curr = curr->next;
 	}
-	return (0);
+	return (1);
 }

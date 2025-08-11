@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:42:05 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 17:36:03 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:52:06 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	setup_cmd_redirections(t_data *data, t_p_list *list)
 		if (curr->token_type == CMD)
 		{
 			fds = cmd_io_paths(curr);
-			print_tab(fds);
+			//print_tab(fds);
 			setup_io_redirections(data, curr, fds);
 			if (fds)
 				free_2d_array(fds);
