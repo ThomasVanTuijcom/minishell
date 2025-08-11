@@ -6,13 +6,13 @@
 #    By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 11:08:43 by tvan-tui          #+#    #+#              #
-#    Updated: 2025/08/11 12:46:24 by tvan-tui         ###   ########.fr        #
+#    Updated: 2025/08/11 12:50:26 by tvan-tui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = -I ./includes -I ./libft
 
 SRCS_DIR = src

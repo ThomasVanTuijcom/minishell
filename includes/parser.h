@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:43:51 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 15:04:54 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 13:04:58 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int						get_len_word_in_quotes(char quote, char *line, int *pos,
 							int length);
 
 /*					UNCLOSED_QUOTES.C			*/
-void					get_unclosed_quote_type(char *str, bool unclosed_f[2]);
+int						get_unclosed_quote_type(char *str);
 int						check_for_unclosed_quotes(char *str);
 
 /*					UTILS_PARSER.C			*/

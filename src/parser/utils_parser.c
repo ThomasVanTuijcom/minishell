@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:50:28 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/07 15:00:18 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:51:45 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	contains_unquoted_meta(char *str)
 		if (is_quote(str[i]) == 1)
 		{
 			i++;
-			while (str[i] != '\'')
+			while (str[i] && str[i] != '\'')
 				i++;
 		}
 		else if (is_quote(str[i]) == 2)
 		{
 			i++;
-			while (str[i] != '"')
+			while (str[i] && str[i] != '"')
 				i++;
 		}
 		else if (is_metachar(str[i]))
