@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 14:20:49 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/05 22:53:02 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:51:44 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	collect_heredoc_lines(char **result, const char *delimitor_nl)
 	{
 		line = readline("> ");
 		if (!line)
-			return (0);
+			break ;
 		tmp = process_heredoc_line(&line, &result);
 		if (!ft_strcmp(line, delimitor_nl))
 		{
