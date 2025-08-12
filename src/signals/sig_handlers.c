@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:45:19 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/05 22:54:50 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:06:52 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,7 @@ void	sig_heredoc(int signal)
 {
 	if (signal == SIGINT)
 	{
-		ft_putchar_fd('\n', 1);
 		g_exit_code = 130;
-	}
-	if (signal == SIGQUIT)
-	{
-		ft_putstr_fd("Quit (core dumped)\n", 1);
-		g_exit_code = 131;
-		close(STDIN_FILENO);
+		exit(g_exit_code);
 	}
 }

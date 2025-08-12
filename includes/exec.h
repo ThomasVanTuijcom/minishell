@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 11:38:11 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 16:20:54 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:48:17 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_env_list	t_env_list;
 /*					HEREDOC.C				*/
 char						**get_heredoc_delimiters(t_p_list *list, int count);
 int							count_heredocs(t_p_list *list);
+
+/*					FILL_HEREDOC.C				*/
 int							fill_heredoc(t_data *data, int count,
 								char **delimitors);
 
@@ -161,5 +163,9 @@ void						handle_input_redirection(t_data *data,
 								t_p_node *node, t_p_node *curr, bool *input);
 void						handle_output_redirection(t_p_node *node,
 								t_p_node *curr, bool *output);
+
+/*					HEREDOC_PARENT_PROCESS.C				*/
+int							heredoc_parent_process(t_data *data, int i,
+								int pipefd[2], pid_t pid);
 
 #endif
