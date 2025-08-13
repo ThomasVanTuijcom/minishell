@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:27:45 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 12:44:49 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 12:56:22 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	execution(t_p_node *node, t_data *data, int exec_data[5])
 			disable_sigpipe_handler();
 			execve(node->path, node->cmds, data->envp);
 			modify_signal_handlers();
+			printf("errno: %d\n", errno);
 			if (errno == 2)
 				err_code = 127;
 			else if (errno == 13)

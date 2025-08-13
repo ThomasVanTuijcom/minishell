@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 18:47:16 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/13 11:48:58 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 13:40:01 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	handle_heredoc_exit_status(t_data *data, int i, int status)
 	if (!WIFEXITED(status) || WEXITSTATUS(status) != 0)
 	{
 		rl_replace_line("", 0);
-		rl_on_new_line();
+		//rl_on_new_line();
 		free_2d_array_n(data->heredoc, i + 1);
 		data->heredoc = NULL;
 		return (0);
