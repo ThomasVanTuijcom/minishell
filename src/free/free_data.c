@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:55:30 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/12 18:27:04 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 12:37:04 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,4 @@ void	free_data(t_data *data)
 		return ;
 	free_data_lists(data);
 	free_data_buffers(data);
-	//free_data_fd(data);
 }
