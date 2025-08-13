@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:45:19 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/13 11:45:15 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:58:34 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void	sig_heredoc(int signal)
 {
 	if (signal == SIGINT)
 	{
+		ft_putchar_fd('\n', 1);
+		rl_replace_line("", 0);
+		rl_on_new_line();
 		g_exit_code = 130;
 		exit(g_exit_code);
 	}
