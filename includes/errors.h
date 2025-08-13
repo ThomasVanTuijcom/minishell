@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:13:27 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/06 17:45:01 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:27:30 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define ERR_HOME "HOME not set\n"
 # define ERR_STALE "Stale file handle\n"
 # define ERR_OLDPWD_NULL "OLDPWD not set\n"
+# define ERR_PERM "Permission denied\n"
 
 /* ************************************************************************** */
 /*                            FUNCTION DECLARATIONS                           */

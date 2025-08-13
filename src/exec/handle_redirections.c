@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:17:50 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/13 19:06:34 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:23:15 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ void	handle_output_redirection(t_p_node *node, t_p_node *curr, bool *output)
 			close(node->fd[1]);
 		node->fd[1] = open(curr->content_exp_wq, O_WRONLY | O_CREAT | O_TRUNC,
 				0664);
-		if (node->fd[1] < 0)
-			perror("open outfile");
 		*output = true;
 	}
 	else if (curr->token_type == APPEND_OF)
@@ -73,8 +71,6 @@ void	handle_output_redirection(t_p_node *node, t_p_node *curr, bool *output)
 			close(node->fd[1]);
 		node->fd[1] = open(curr->content_exp_wq, O_WRONLY | O_CREAT | O_APPEND,
 				0664);
-		if (node->fd[1] < 0)
-			perror("open append_of");
 		*output = true;
 	}
 }

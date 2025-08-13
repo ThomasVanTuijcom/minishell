@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:13:02 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/13 19:03:45 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:29:36 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	create_output_file(char *filename)
 	fd = open(filename, O_WRONLY | O_CREAT, 0664);
 	if (fd < 0)
 	{
-		print_error(MS_BASH, NULL, filename, ERR_NO_CREATE);
+		print_error(MS_BASH, NULL, filename, ERR_PERM);
+		g_exit_code = 1;
 		return (0);
 	}
 	close(fd);
