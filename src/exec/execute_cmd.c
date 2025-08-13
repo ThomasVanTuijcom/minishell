@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:23:53 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 16:07:28 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 18:33:51 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	execute_cmd(t_data *data, t_p_list *list)
 	modify_signal_handlers();
 	while (curr)
 	{
-		if (curr->token_type == CMD || !curr->index)
+		if ((curr->token_type == CMD) || !curr->index)
 		{
 			exec_data[EXEC_INDEX]++;
 			execute_node(exec_data, curr, data);

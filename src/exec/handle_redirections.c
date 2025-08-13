@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:17:50 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 17:41:23 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:06:34 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ static void	open_infile(t_p_node *node, t_p_node *curr, bool *input)
 {
 	if (*input && node->fd[0] > 0)
 		close(node->fd[0]);
-	node->fd[0] = open(curr->content, O_RDONLY);
-	if (node->fd[0] < 0)
-		perror("open infile");
+	node->fd[0] = open(curr->content_exp_wq, O_RDONLY);
 	*input = true;
 }
 
@@ -63,7 +61,8 @@ void	handle_output_redirection(t_p_node *node, t_p_node *curr, bool *output)
 	{
 		if (*output && node->fd[1] > 0)
 			close(node->fd[1]);
-		node->fd[1] = open(curr->content, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+		node->fd[1] = open(curr->content_exp_wq, O_WRONLY | O_CREAT | O_TRUNC,
+				0664);
 		if (node->fd[1] < 0)
 			perror("open outfile");
 		*output = true;
@@ -72,7 +71,8 @@ void	handle_output_redirection(t_p_node *node, t_p_node *curr, bool *output)
 	{
 		if (*output && node->fd[1] > 0)
 			close(node->fd[1]);
-		node->fd[1] = open(curr->content, O_WRONLY | O_CREAT | O_APPEND, 0664);
+		node->fd[1] = open(curr->content_exp_wq, O_WRONLY | O_CREAT | O_APPEND,
+				0664);
 		if (node->fd[1] < 0)
 			perror("open append_of");
 		*output = true;

@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:13:02 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 18:32:12 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:03:45 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int	create_files(t_p_list *list)
 	{
 		if (curr->token_type == INFILE)
 		{
-			if (!verify_input_file(curr->content))
+			if (!verify_input_file(curr->content_exp_wq))
 				return (0);
 		}
 		else if (curr->token_type == OUTFILE
 			|| curr->token_type == APPEND_OF)
 		{
-			if (!create_output_file(curr->content))
+			if (!create_output_file(curr->content_exp_wq))
 				return (0);
 		}
 		curr = curr->next;

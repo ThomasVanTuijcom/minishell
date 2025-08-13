@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 11:30:40 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/12 18:52:14 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:07:13 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,12 @@ int	executor(t_data *data)
 		handle_heredoc_variables(data->heredoc, NULL, data->env);
 	assign_cmd_options(data->parser);
 	pathfinder(data);
-	if (!create_files(data->parser))
-	{
-		free_in_exec(data);
-		return (0);
-	}
+	create_files(data->parser);
 	setup_cmd_redirections(data, data->parser);
 	if (data->parser->head->content_exp_wq[0])
 		execute_cmd(data, data->parser);
-	else if (ft_strlen(data->parser->head->content_exp) != ft_strlen(data->parser->head->content_exp_wq))
+	else if (ft_strlen(data->parser->head->content_exp)
+		!= ft_strlen(data->parser->head->content_exp_wq))
 		ft_putstr_fd("bash: : command not found\n", 2);
 	free_in_exec(data);
 	return (0);
