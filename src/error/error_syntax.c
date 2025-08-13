@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:04:38 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/06 16:31:19 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:30:29 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ int	syntax_error_meta(t_p_list *list)
 			return (print_syntax_error_meta(curr->content_exp_wq));
 		else if (is_metachar_type(curr->token_type)
 			&& is_metachar_type(curr->next->token_type))
-			return (print_syntax_error_meta(curr->next->content_exp_wq));
+		{
+			if (!pipe_followed_by_redir(curr))
+				return (print_syntax_error_meta(curr->next->content_exp_wq));
+		}
 		curr = curr->next;
 	}
 	if (is_metachar_type(curr->token_type))

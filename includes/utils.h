@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:04:00 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 13:15:12 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:52:34 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,5 @@ void				remake_envp(t_data *data);
 /*					PRINT_STRUCTURE.C		*/
 void				print_array(char **arr);
 void				print_parser(t_data *data);
-
-// TO DELETE
-void				print_p_list(const t_p_list *list);
 
 #endif

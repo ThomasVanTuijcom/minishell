@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:41:09 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 18:59:31 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:45:53 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	**get_heredoc_delimiters(t_p_list *list, int count)
 	t_p_node	*curr;
 	char		**delimitors;
 	int			i;
+	char		*trimmed;
 
 	delimitors = malloc(sizeof(char *) * (count + 1));
 	if (!delimitors)
@@ -27,9 +28,11 @@ char	**get_heredoc_delimiters(t_p_list *list, int count)
 	{
 		if (curr->token_type == LIMITATOR)
 		{
-			delimitors[i] = ft_strdup(curr->content_exp_wq);
+			trimmed = ft_strtrim(curr->content, "\"\'");
+			delimitors[i] = ft_strdup(trimmed);
 			if (!delimitors[i])
 				return (NULL);
+			free(trimmed);
 			i++;
 		}
 		curr = curr->next;

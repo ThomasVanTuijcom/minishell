@@ -6,7 +6,7 @@
 /*   By: tvan-tui <tvan-tui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:29:16 by tvan-tui          #+#    #+#             */
-/*   Updated: 2025/08/11 17:34:09 by tvan-tui         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:28:17 by tvan-tui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_p_node	t_p_node;
 /*					INIT_LEXER.C					*/
 int						init_lexer(t_data *data);
 int						has_invalid_meta_sequence(t_p_list *list);
+bool					pipe_followed_by_redir(t_p_node *curr);
 
 /*					ASSIGN_ARGUMENT_TYPES.C				*/
 int						is_heredoc_valid(t_p_node *node);
